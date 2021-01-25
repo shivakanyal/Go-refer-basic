@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <% if (users.length  === 0) { %>
+       <h1>No user to show</h1>
+    <% } else{%>
+        <h1 class="heading-1">List of Users</h1>
+        <% users.forEach(user => { %>
+          
+          <div class="user-box">
+            <h2 class="user-name"><%= user.name %> </h2>
+            <p class="user-location"><%= user.location  %> </p>
+          </div>
+         <!-- <img src="/images/Rolling-1s-131px.svg" alt=""> -->
+
+        <% }) %>
+        <% } %> 
+    <!-- <script src="/script.js"></script> -->
+
+</body>
+
+</html>
