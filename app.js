@@ -17,14 +17,14 @@ app.use(userRouter);
 // setting templating engine as ejs
 app.set('view engine','ejs');
 
-
+// const a = require('./config/dev.env')
 // Connecting to database
 mongoose.connect(
-    'mongodb://localhost:27017/GoRefer',
+    process.env.MONGODB_URL,
     { useNewUrlParser: true }
     )
     .then(result => {
-        app.listen(3000);
+        app.listen(process.env.PORT);
         console.log('app is running on port 3000')
     })
     .catch(err => {

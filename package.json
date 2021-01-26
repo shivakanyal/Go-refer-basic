@@ -4,7 +4,8 @@
   "description": "\"gorefer functionality\"",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "dev":"env-cmd -f ./config/dev.env nodemon app.js"
   },
   "author": "shiva kanyal",
   "license": "ISC",
@@ -13,5 +14,8 @@
     "ejs": "^3.1.5",
     "express": "^4.17.1",
     "mongoose": "^5.11.13"
+  },
+  "devDependencies": {
+    "env-cmd": "^10.1.0"
   }
 }
