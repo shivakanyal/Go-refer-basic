@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+  <%- include('./includes/navbar.ejs') %> 
+
     <% if (users.length  === 0) { %>
        <h1>No user to show</h1>
     <% } else{%>
@@ -14,8 +16,14 @@
         <% users.forEach(user => { %>
           
           <div class="user-box">
-            <h2 class="user-name"><%= user.name %> </h2>
-            <p class="user-location"><%= user.location  %> </p>
+            <div class="name-box">
+              <span class="name">Name : </span>
+              <h2 class="user-name"><%= user.name %> </h2>
+            </div>
+            <div class="address-box">
+              <span class="address">Address : </span>
+              <p class="user-location"><%= user.location  %> </p>
+            </div>
           </div>
          <!-- <img src="/images/Rolling-1s-131px.svg" alt=""> -->
 

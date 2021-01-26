@@ -25,7 +25,7 @@ mongoose.connect(
     )
     .then(result => {
         app.listen(process.env.PORT);
-        console.log('app is running on port 3000')
+        console.log('app is running on port '+process.env.PORT)
     })
     .catch(err => {
         console.log(err);

@@ -4,7 +4,7 @@ const userContorller = require('../controllers/user')
 const router = express.Router()
 
 
-router.get('/',userContorller.getIndex)
+router.get('/',userContorller.getAddRecord)
 
 router.get('/add-record',userContorller.getAddRecord);
 

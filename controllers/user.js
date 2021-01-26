@@ -1,12 +1,8 @@
 const User = require('../models/user')
 
-// function to get index page
-exports.getIndex = (req,res,next) =>{
-    res.render('index')
-}
 // function to get list of all records
 exports.getAllRecords = (req,res,next)=>{
-    User.find()
+    User.find().sort({'createdAt':-1})
     .then(users=>{
         res.render('get-records',{
             users:users
@@ -29,7 +25,7 @@ exports.postAddRecord = (req,res,next) =>{
     user.save()
         .then(result =>{
             console.log(res);
-            res.redirect('/add-record');
+            res.redirect('/get-records');
         }).catch(err =>{
             console.log(err);
         })
@@ -38,7 +34,7 @@ exports.postAddRecord = (req,res,next) =>{
 exports.search = (req,res,next) =>{
     console.log('hey i am running',',req.body=',req.body.searchBar)
     const searchValue=req.body.searchBar
-    User.find({$or:[{location:searchValue},{name:searchValue}]})
+    User.find({$or:[{location:searchValue},{name:searchValue}]}).sort({'createdAt':-1})
         .then(users=>{
             console.log(users)
             res.render('get-records',{

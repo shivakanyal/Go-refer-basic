@@ -1,0 +1,67 @@
+<nav class="navbar">
+    <ul class="links">
+        <li>
+            <form action="search" method="POST" class="search-form" >
+                <input type="text" placeholder="search by name or location." name="searchBar" class="searchbar">
+                <button type="submit" class="search-button">submit</button>
+            </form>    
+        </li>
+        <li>
+            <a href="/add-record" class="search-link">Add Record</a>
+        </li>
+        <li>
+        <a href="/get-records" class="search-link">Get All Records</a>
+        </li>
+      </li>
+    </ul>
+</nav>
+
+<style>
+    .links{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* margin-top: 3px; */
+        background-color: rgb(197, 197, 197);
+        padding: 5px;
+    }
+    .links li {
+        list-style: none;
+        /* text-align: center; */
+    }
+    .links li a{
+        text-decoration: none;
+        display: block;
+        padding: 8px 5px;
+        font-size: 20px;
+        color: #000;
+        margin-right: 10px;
+    }
+    .links li a:hover{
+        background-color: rgb(92, 92, 92);
+        color: #fff;
+    }
+    .search-form{
+        text-align: center;
+        
+    }
+    .links li form input{
+        padding: 10px 5px;
+        width: 400px;
+        display: inline-block;
+        margin: auto;
+        border-radius:20px;
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0,0,0,.2);
+        border:1px solid #aaa;
+        outline: none;
+        
+    }    
+    .links li form button{
+        padding: 8px 10px;
+        border-radius: 20px;
+        border:1px solid #777;
+        position: relative;
+        right: 67px;
+    }
+</style>
