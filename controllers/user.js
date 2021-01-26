@@ -24,7 +24,6 @@ exports.postAddRecord = (req,res,next) =>{
     })
     user.save()
         .then(result =>{
-            console.log(res);
             res.redirect('/get-records');
         }).catch(err =>{
             console.log(err);
@@ -32,11 +31,10 @@ exports.postAddRecord = (req,res,next) =>{
 }
 // function to seach records by location or name
 exports.search = (req,res,next) =>{
-    console.log('hey i am running',',req.body=',req.body.searchBar)
     const searchValue=req.body.searchBar
-    User.find({$or:[{location:searchValue},{name:searchValue}]}).sort({'createdAt':-1})
+User.find({$or:[{location:new RegExp( searchValue,'i')},{name:new RegExp( searchValue,'i')}]}).sort({'createdAt':-1})
         .then(users=>{
-            console.log(users)
+            console.log('users:',users)
             res.render('get-records',{
                 users:users
             })         
